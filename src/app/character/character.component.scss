@@ -38,6 +38,19 @@
 }
 .character__episodes--item {
     text-align: center;
+    margin: 5px auto;
+}
+.item {
+    color: black;
+    border-radius: 5px;
+    padding: 5px;
+    text-decoration: none;
+}
+.item:hover{
+    cursor: pointer;
+    background-color: #756951;
+    color: white;
+    font-weight: bold;
 }
 
 @media(max-width: 800px) {

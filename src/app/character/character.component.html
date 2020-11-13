@@ -17,7 +17,9 @@
         <p class="title">Lista de Capitulos</p>
         <ul class="character__episodes--content">
             <li class="character__episodes--item" *ngFor="let episode of episodes">
-                {{ episode.name }}
+                <a class="item" [routerLink]="['/episodes','episode', episode.id]">
+                    {{ episode.name }}
+                </a>
             </li>
         </ul>
     </article>

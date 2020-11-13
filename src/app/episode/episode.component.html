@@ -9,10 +9,12 @@
         </article>
     </div>
     <article class="character__content">
-        <p class="title">Lista de Capitulos</p>
+        <p class="title">Lista del Reparto</p>
         <ul class="character__episodes--content">
             <li class="character__episodes--item" *ngFor="let character of characters">
-                {{ character.name }}
+                <a class="item" [routerLink]="['/characters','character', character.id]">
+                    {{ character.name }}
+                </a>
             </li>
         </ul>
     </article>
