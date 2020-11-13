@@ -1,0 +1,53 @@
+.character {
+    width: 100%;
+}
+.character__content {
+    padding: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+}
+.character__image{
+    border-radius: 10px;
+    overflow: hidden;
+    width: 300px;
+}
+.character__data {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.character__data--item{
+    text-align: center;
+}
+.title{
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+.character__episodes--content{
+    list-style: none;
+    text-align: start;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+.character__episodes--item {
+    text-align: center;
+}
+
+@media(max-width: 800px) {
+    .character__content {
+        flex-direction: column;
+    }
+    .character__image{
+        margin-bottom: 20px;
+    }
+    .character__data {
+        align-items: center;
+    }
+}

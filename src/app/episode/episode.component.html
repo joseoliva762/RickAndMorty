@@ -1,0 +1,20 @@
+<app-header></app-header>
+<section class="character">
+    <div class="character__content">
+        <article class="character__data">
+            <p class="title">Información</p>
+            <span class="character__data--item"><strong>Nombre:</strong> {{ data.name }} </span>
+            <span class="character__data--item"><strong>Fecha al Aire:</strong> {{ data.air_date }} </span>
+            <span class="character__data--item"><strong>Episodio:</strong> {{ data.episode }} </span>
+        </article>
+    </div>
+    <article class="character__content">
+        <p class="title">Lista de Capitulos</p>
+        <ul class="character__episodes--content">
+            <li class="character__episodes--item" *ngFor="let character of characters">
+                {{ character.name }}
+            </li>
+        </ul>
+    </article>
+</section>
+<app-footer></app-footer>

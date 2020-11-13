@@ -1,0 +1,35 @@
+<app-header></app-header>
+<app-finderbar (input)="searchingName()" (searching)="name=$event"></app-finderbar>
+<ul class="all__episodes">
+    <li class="all__episodes--item">
+        <section class="episodes__content">
+            <span class="episodes__content--finding"*ngIf="name">
+                <strong>Buscando:</strong> {{name}}
+            </span>
+            <div class="data-grid">
+                <div class="episodes__content--item" *ngFor="let episode of episodes.results; index as i">
+                    <span class="episodes__data--name"> {{ episode.name }} </span>
+                    <strong class="episodes__data--status">{{ episode.air_date }}</strong>
+                    <button class="episodes__data--moreinfo" (click)="showMoreData(i)"> Mostrar más información </button>
+                    <div class="episodes__data--subdata" *ngIf="selected === i">
+                        <span class="episodes__subdata--item"><strong>Episode:</strong> {{ episode.episode }} </span>
+                        <span class="episodes__subdata--item"><strong>Creacion:</strong> {{ episode.created }} </span>
+                    </div>
+                </div> 
+            </div>
+            <div class="page__error" *ngIf="!episodes.results">
+                <span class="episodes__data--name">Pagina No Encontrada, Por Favor Seleccionar Nuevamente.</span>
+                <strong>Recomendación, ir a página 1.</strong>
+            </div>
+            <span>Actual: {{ page }}</span>
+            <div class="characters__content--pages">
+                <span class="pages--item" *ngFor="let pages of numberOfPages">
+                    <button class="pages__item--selection" (click)="changeApiURLByPage(pages)">
+                        {{ pages }}
+                    </button>
+                </span>
+            </div>
+        </section>
+    </li>
+</ul>
+<app-footer></app-footer>

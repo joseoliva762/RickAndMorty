@@ -1,0 +1,40 @@
+<app-header></app-header>
+<app-finderbar (input)="searchingName()" (searching)="name=$event"></app-finderbar>
+<ul class="all__characters">
+    <li class="all__characters--item">
+        <section class="characters__content">
+            <span class="characters__content--finding"*ngIf="name">
+                <strong>Buscando:</strong> {{name}}
+            </span>
+            <div class="data-grid">
+                <div class="characters__content--item" *ngFor="let character of characters.results; index as i">
+                    <img [src]="character.image" [alt]="character.name" class="character__data--image">
+                    <a class="character__data--a" [routerLink]="['/characters','character', character.id]">
+                        <span class="character__data--name"> {{ character.name }} </span>
+                    </a>
+                    <strong class="character__data--status">{{ character.status }}</strong>
+                    <button class="character__data--moreinfo" (click)="showMoreData(i)"> Mostrar más información </button>
+                    <div class="character__data--subdata" *ngIf="selected === i">
+                        <span class="character__subdata--item"><strong>Especie:</strong> {{ character.species }} </span>
+                        <span class="character__subdata--item"><strong>Genero:</strong> {{ character.gender }} </span>
+                        <span class="character__subdata--item"><strong>Origen:</strong> {{ character.origin.name }} </span>
+                        <span class="character__subdata--item"><strong>Ultima Locacion:</strong> {{ character.location.name }} </span>
+                    </div>
+                </div> 
+            </div>
+            <div class="page__error" *ngIf="!characters.results">
+                <span class="character__data--name">Pagina No Encontrada, Por Favor Seleccionar Nuevamente.</span>
+                <strong>Recomendación, ir a página 1.</strong>
+            </div>
+            <span>Actual: {{ page }}</span>
+            <div class="characters__content--pages">
+                <span class="pages--item" *ngFor="let pages of numberOfPages">
+                    <button class="pages__item--selection" (click)="changeApiURLByPage(pages)">
+                        {{ pages }}
+                    </button>
+                </span>
+            </div>
+        </section>
+    </li>
+</ul>
+<app-footer></app-footer>

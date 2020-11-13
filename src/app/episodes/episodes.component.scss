@@ -1,0 +1,116 @@
+.episodes__content {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 100%;
+    width: 100%;
+}
+
+.episodes__content--finding {
+    font-size: 25px;
+    padding: 30px 0;
+    text-align: center;
+    width: 100%;
+}
+
+.episodes__content--item {
+    align-items: center;
+    // border: 1px solid var(--black);
+    box-shadow: 0px 5px 5px 1px rgba(17,17,17,0.14);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+    height: 400px;
+    max-height: 570px;
+    padding: 20px 10px;
+    transition: .2s;
+    width: 320px;
+
+}
+
+.episodes__data--name {
+    text-align: center;
+    font-size: 25px;
+}
+.episodes__data--name:hover{
+    font-weight: bolder;
+    color: #756951;
+}
+
+.episodes__data--subdata {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.episodes__subdata--item{
+    margin: 0;
+    padding: 0;
+}
+.episodes__data--moreinfo {
+    background-color: #FCFAFB;
+    border: none;
+    border-radius: 10px;
+    color:#756951;
+    font-weight: bolder;
+    font-size: 12px;
+    height: 30px;
+    margin: 10px 0;
+    width: 200px;
+}
+.episodes__data--moreinfo:hover {
+    cursor: pointer;
+    background-color: #756951;
+    color: #FCFAFB;
+    box-shadow: 0px 2px 2px 0px rgba(17,17,17,0.14);
+}
+.episodes__content--pages{
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+}
+.pages--item{
+    text-align: center;
+}
+.pages__item--selection {
+    background-color: transparent;
+    color: #756951;
+    border: none;
+}
+.pages__item--selection:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+.page__error {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;;
+}
+.all__episodes {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 0px;
+    list-style: none;
+    width: 100%;
+}
+.all__episodes--item{
+    width: 100%;
+}
+
+
+@media(max-width: 400px) {
+    .episodes__content--item {
+        margin: 20px auto;
+    }
+}

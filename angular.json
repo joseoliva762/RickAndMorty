@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "rickandmorty"
+  "defaultProject": "rickandmorty",
+  "cli": {
+    "analytics": "c4cd1970-27cb-4f93-b8e4-1fd98a4636a1"
+  }
 }

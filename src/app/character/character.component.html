@@ -1,0 +1,25 @@
+<app-header></app-header>
+<section class="character">
+    <div class="character__content">
+        <img [src]="data.image" [alt]="data.name" class="character__image">
+        <article class="character__data">
+            <p class="title">Información</p>
+            <span class="character__data--item"><strong>Nombre:</strong> {{ data.name }} </span>
+            <span class="character__data--item"><strong>Status:</strong> {{ data.status }} </span>
+            <span class="character__data--item"><strong>Especie:</strong> {{ data.species }} </span>
+            <span class="character__data--item" *ngIf="data.type"><strong>Tipo:</strong> {{ data.type }} </span>
+            <span class="character__data--item"><strong>Genero:</strong> {{ data.gender }} </span>
+            <span class="character__data--item"><strong>Origen:</strong> {{ data.origin.name }} </span>
+            <span class="character__data--item"><strong>Localización:</strong> {{ data.location.name }} </span>
+        </article>
+    </div>
+    <article class="character__content">
+        <p class="title">Lista de Capitulos</p>
+        <ul class="character__episodes--content">
+            <li class="character__episodes--item" *ngFor="let episode of episodes">
+                {{ episode.name }}
+            </li>
+        </ul>
+    </article>
+</section>
+<app-footer></app-footer>
