@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CharactersComponent } from './components/characters.component';
+import { CharactersComponent } from './characters/characters.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { FinderbarComponent } from './finderbar/finderbar.component';
 import { EpisodesComponent } from './episodes/episodes.component';

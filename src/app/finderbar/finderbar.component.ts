@@ -10,7 +10,7 @@ export class FinderbarComponent implements OnInit, OnChanges {
   searching: EventEmitter<string> = new EventEmitter<string>();
   name = '';
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+    this.name = '';
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.writing();

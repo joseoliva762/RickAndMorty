@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { from } from 'rxjs';
 
-import { CharactersComponent } from './components/characters.component';
+import { CharactersComponent } from './characters/characters.component';
 import { EpisodesComponent } from './episodes/episodes.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
