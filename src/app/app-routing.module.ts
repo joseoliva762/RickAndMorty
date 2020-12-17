@@ -7,33 +7,40 @@ import { EpisodesComponent } from './episodes/episodes.component';
 import { EpisodeComponent } from './episode/episode.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CharacterComponent } from './character/character.component';
+import { LayoutComponent } from './layout/layout.component'
 
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/characters',
-    pathMatch: 'full'
-  },
-  {
-    path: 'characters',
-    component: CharactersComponent
-  },
-  {
-    path: 'episodes',
-    component: EpisodesComponent
-  },
-  {
-    path: 'characters/:type/:name',
-    component: CharacterComponent
-  },
-  {
-    path: 'episodes/:type/:name',
-    component: EpisodeComponent
-  },
-  {
-    path: '**',
-    component: PageNotFoundComponent
+    component: LayoutComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: '/characters',
+        pathMatch: 'full',
+      },
+      {
+        path: 'characters',
+        component: CharactersComponent
+      },
+      {
+        path: 'episodes',
+        component: EpisodesComponent
+      },
+      {
+        path: 'characters/:type/:name',
+        component: CharacterComponent
+      },
+      {
+        path: 'episodes/:type/:name',
+        component: EpisodeComponent
+      },
+      {
+        path: '**',
+        component: PageNotFoundComponent
+      }
+    ]
   }
 ];
 
