@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { CharacterSelectorService } from './../character-selector.service';
+import { CharacterSelectorService } from './../core/service/character-selector.service';
 import getData from './../utils/getData';
+import { Episode } from '../core/Models/episodes/episodes.model';
+import { Character } from '../core/Models/characters/characters.model';
 
 @Component({
   selector: 'app-episode',
@@ -12,7 +14,7 @@ import getData from './../utils/getData';
 export class EpisodeComponent implements OnInit {
     characterSelectorService: any;
     characters: any[] = [];
-    data: any;
+    data!: Episode;
     constructor( private route: ActivatedRoute, characterSelectorService: CharacterSelectorService) {
       this.characterSelectorService = characterSelectorService;
     }

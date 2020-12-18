@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 
-import { CharacterSelectorService } from './../character-selector.service';
+import { CharacterSelectorService } from './../core/service/character-selector.service';
 import getData from './../utils/getData';
+import { Character } from '../core/Models/characters/characters.model';
 
 @Component({
   selector: 'app-character',
@@ -10,9 +11,9 @@ import getData from './../utils/getData';
   styleUrls: ['./character.component.scss']
 })
 export class CharacterComponent implements OnInit {
-  characterSelectorService: any;
+  characterSelectorService: CharacterSelectorService;
   episodes: any[] = [];
-  data: any;
+  data!: Character;
 
   constructor( private route: ActivatedRoute, characterSelectorService: CharacterSelectorService) {
     this.characterSelectorService = characterSelectorService;

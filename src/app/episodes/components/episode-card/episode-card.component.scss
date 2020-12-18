@@ -1,0 +1,59 @@
+.episodes__content--item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+}
+.episodes__data--name {
+    text-align: center;
+    font-size: 25px;
+}
+.character__data--a{
+    color: black;
+    text-decoration: none;
+    text-align: center;
+}
+.episodes__data--name:hover{
+    font-weight: bolder;
+    color: #756951;
+}
+
+.episodes__data--subdata {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+.episodes__subdata--item{
+    margin: 0;
+    padding: 0;
+}
+.episodes__data--moreinfo {
+    background-color: #FCFAFB;
+    border: none;
+    border-radius: 10px;
+    color:#756951;
+    font-weight: bolder;
+    font-size: 12px;
+    height: 30px;
+    margin: 10px 0;
+    width: 200px;
+}
+.episodes__data--moreinfo:hover {
+    cursor: pointer;
+    background-color: #756951;
+    color: #FCFAFB;
+    box-shadow: 0px 2px 2px 0px rgba(17,17,17,0.14);
+}
+
+@media(max-width: 400px) {
+    .episodes__content--item {
+        margin: 20px auto;
+    }
+}

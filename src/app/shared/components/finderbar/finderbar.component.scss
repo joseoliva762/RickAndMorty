@@ -20,7 +20,12 @@
     padding: 5px 10px;
     width: 50%;
 }
-@media(max-width: 400px) {
+@media(max-width: 1000px) {
+    .searching__section--input {
+        width: 80%;
+    }
+}
+@media(max-width: 500px) {
     .searching__section--place {
         font-size: 20px;
         font-weight: bold;

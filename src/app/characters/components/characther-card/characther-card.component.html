@@ -1,0 +1,14 @@
+<div class="characters__content--item">
+    <img [src]="character.image" [alt]="character.name" class="character__data--image">
+    <a class="character__data--a" [routerLink]="['/characters','character', character.id]">
+        <span class="character__data--name"> {{ character.name }} </span>
+    </a>
+    <strong class="character__data--status">{{ character.status }}</strong>
+    <button class="character__data--moreinfo" (click)="showMoreData(i)"> Mostrar más información </button>
+    <div class="character__data--subdata" *ngIf="selected === i">
+        <span class="character__subdata--item"><strong>Especie:</strong> {{ character.species }} </span>
+        <span class="character__subdata--item"><strong>Genero:</strong> {{ character.gender }} </span>
+        <span class="character__subdata--item"><strong>Origen:</strong> {{ character.origin.name }} </span>
+        <span class="character__subdata--item"><strong>Ultima Locacion:</strong> {{ character.location.name }} </span>
+    </div>
+</div>

@@ -1,0 +1,11 @@
+<div class="episodes__content--item">
+    <a class="character__data--a" [routerLink]="['/episodes','episode', episode.id]">
+        <span class="episodes__data--name"> {{ episode.name }} </span>
+    </a>
+    <strong class="episodes__data--status">{{ episode.air_date }}</strong>
+    <button class="episodes__data--moreinfo" (click)="showMoreData(i)"> Mostrar más información </button>
+    <div class="episodes__data--subdata" *ngIf="selected === i">
+        <span class="episodes__subdata--item"><strong>Episode:</strong> {{ episode.episode }} </span>
+        <span class="episodes__subdata--item"><strong>Creacion:</strong> {{ episode.created }} </span>
+    </div>
+</div> 

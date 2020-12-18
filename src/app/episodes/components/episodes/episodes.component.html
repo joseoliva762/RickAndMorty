@@ -6,16 +6,13 @@
                 <strong>Buscando:</strong> {{name}}
             </span>
             <div class="data-grid">
-                <div class="episodes__content--item" *ngFor="let episode of episodes.results; index as i">
-                    <a class="character__data--a" [routerLink]="['/episodes','episode', episode.id]">
-                        <span class="episodes__data--name"> {{ episode.name }} </span>
-                    </a>
-                    <strong class="episodes__data--status">{{ episode.air_date }}</strong>
-                    <button class="episodes__data--moreinfo" (click)="showMoreData(i)"> Mostrar más información </button>
-                    <div class="episodes__data--subdata" *ngIf="selected === i">
-                        <span class="episodes__subdata--item"><strong>Episode:</strong> {{ episode.episode }} </span>
-                        <span class="episodes__subdata--item"><strong>Creacion:</strong> {{ episode.created }} </span>
-                    </div>
+                <div class="episodes__container--item" *ngFor="let episode of episodes.results; index as i">
+                    <app-episode-card
+                        [episode]="episode"
+                        [selected]="selected" 
+                        [i]="i"
+                        (selectedEmitter)="selected=$event">
+                    </app-episode-card>
                 </div> 
             </div>
             <div class="page__error" *ngIf="!episodes.results">

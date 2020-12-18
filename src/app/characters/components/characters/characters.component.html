@@ -1,0 +1,32 @@
+<app-finderbar (input)="searchingName()" (searching)="name=$event"></app-finderbar>
+<ul class="all__characters">
+    <li class="all__characters--item">
+        <section class="characters__content">
+            <span class="characters__content--finding"*ngIf="name">
+                <strong>Buscando:</strong> {{name}}
+            </span>
+            <div class="data-grid">
+                <div class="characters__container--item" *ngFor="let character of characters.results; index as i">
+                    <app-characther-card 
+                                [character]="character"
+                                [selected]="selected" 
+                                [i]="i"
+                                (selectedEmitter)="selected=$event">
+                    </app-characther-card>
+                </div> 
+            </div>
+            <div class="page__error" *ngIf="!characters.results">
+                <span class="character__data--name">Pagina No Encontrada, Por Favor Seleccionar Nuevamente.</span>
+                <strong>Recomendación, ir a página 1.</strong>
+            </div>
+            <span>Actual: {{ page }}</span>
+            <div class="characters__content--pages">
+                <span class="pages--item" *ngFor="let pages of numberOfPages">
+                    <button class="pages__item--selection" (click)="changeApiURLByPage(pages)">
+                        {{ pages }}
+                    </button>
+                </span>
+            </div>
+        </section>
+    </li>
+</ul>

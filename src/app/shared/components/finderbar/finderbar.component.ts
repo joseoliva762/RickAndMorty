@@ -1,4 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
+import { NgModule } from '@angular/core';
 
 @Component({
   selector: 'app-finderbar',

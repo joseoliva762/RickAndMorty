@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import getData from './utils/getData';
+import getData from '../../utils/getData';
 
 @Injectable({
   providedIn: 'root'

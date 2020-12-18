@@ -4,33 +4,29 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CharactersComponent } from './characters/characters.component';
 import { EpisodeComponent } from './episode/episode.component';
-import { FinderbarComponent } from './finderbar/finderbar.component';
-import { EpisodesComponent } from './episodes/episodes.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { CharacterComponent } from './character/character.component';
 import { LayoutComponent } from './layout/layout.component';
+import { CoreModule } from './core/core.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CharactersComponent,
     EpisodeComponent,
-    FinderbarComponent,
-    EpisodesComponent,
     HeaderComponent,
     FooterComponent,
     PageNotFoundComponent,
     CharacterComponent,
-    LayoutComponent
+    LayoutComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]

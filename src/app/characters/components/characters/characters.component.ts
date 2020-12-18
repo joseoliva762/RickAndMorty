@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
-import getData from '../utils/getData';
+import getData from '../../../utils/getData';
+import { Characters, Character } from '../../../core/Models/characters/characters.model';
 
 
 @Component({
@@ -9,13 +10,13 @@ import getData from '../utils/getData';
 })
 export class CharactersComponent implements OnInit, OnChanges {
     @Input() page = 1;
-    name: string | undefined;
+    name!: string;
     status = false;
-    selected: number | undefined;
-    charactersURL: string | undefined;
-    characters: any;
+    selected!: number | undefined;
+    charactersURL!: string;
+    characters!: Characters;
     numberOfPages: Array<number | string> = ['Paginas'];
-
+    constructor() {}
 
     ngOnInit(): void {
         this.generateCharacters();
@@ -39,10 +40,11 @@ export class CharactersComponent implements OnInit, OnChanges {
         this.selected = index;
     }
     getNumberOfPages(): void {
-        this.numberOfPages = Array(this.characters.info.pages).fill(1).map((x, i) => i + 1);
+        this.numberOfPages = Array((this.characters as Characters).info.pages).fill(1).map((x, i) => i + 1);
         console.log(this.numberOfPages);
     }
     changeApiURLByPage(page: number | string): void{
+        this.selected = undefined;
         this.page = page as number;
         this.generateCharacters();
     }
